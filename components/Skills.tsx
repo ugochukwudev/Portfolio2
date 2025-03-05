@@ -22,7 +22,8 @@ import {
     SiGrafana,
     SiPrometheus,
     SiAmazonrds,
-    SiFirebase
+    SiFirebase,
+    SiPuppeteer
 } from "react-icons/si";
 
 // Define skill item type
@@ -43,9 +44,7 @@ const Skills = () => {
         { icon: FaNodeJs, name: "Node.js" },
         { icon: SiExpress, name: "Express.js" },
         { icon: SiNestjs, name: "NestJS" },
-        { icon: SiTypescript, name: "TypeScript" },
-        { icon: SiJavascript, name: "JavaScript" },
-        { icon: SiRust, name: "Rust" }
+        { icon: SiPuppeteer, name: "Puppeteer" }
     ];
 
     const databases: SkillItem[] = [
@@ -78,6 +77,8 @@ const Skills = () => {
     ];
 
     const languages: SkillItem[] = [
+        { icon: SiJavascript, name: "JavaScript" },
+        { icon: SiTypescript, name: "TypeScript" },
         { icon: SiRust, name: "Rust" }
     ];
 

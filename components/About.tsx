@@ -3,7 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { FaServer, FaCloud, FaDatabase, FaSitemap } from "react-icons/fa";
+import { FaServer, FaCloud, FaDatabase, FaSitemap, FaJs } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 
 const About = () => {
     const ref = useRef(null);
@@ -49,7 +50,9 @@ const About = () => {
         { icon: <FaServer size={24} />, title: "Backend Engineering", desc: "Building robust, scalable server-side applications and APIs with high performance" },
         { icon: <FaCloud size={24} />, title: "Cloud Engineering", desc: "Designing and implementing cloud-native solutions with focus on scalability and reliability" },
         { icon: <FaDatabase size={24} />, title: "Database Design", desc: "Architecting efficient database schemas and optimizing for performance and scale" },
-        { icon: <FaSitemap size={24} />, title: "System Design", desc: "Creating resilient distributed systems with focus on scalability and maintainability" }
+        { icon: <FaSitemap size={24} />, title: "System Design", desc: "Creating resilient distributed systems with focus on scalability and maintainability" },
+        { icon: <FaJs size={24} />, title: "JavaScript", desc: "Expert in modern JavaScript, including ES6+ features, async programming, and Node.js ecosystem" },
+        { icon: <SiTypescript size={24} />, title: "TypeScript", desc: "Proficient in TypeScript development with strong typing and object-oriented principles" }
     ];
 
     return (
@@ -127,7 +130,7 @@ const About = () => {
                     >
                         My Expertise
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {skills.map((skill, index) => (
                             <motion.div
                                 key={index}
