@@ -7,21 +7,37 @@ import { FaServer, FaCloud, FaDatabase, FaSitemap } from "react-icons/fa";
 
 const About = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
-    //const experience = "4+";
+    const expertiseRef = useRef(null);
+    const isInView = useInView(ref, {
+        once: true,
+        amount: 0.3
+    });
+    const isExpertiseInView = useInView(expertiseRef, {
+        once: true,
+        amount: 0.3
+    });
+    const experience = "4+";
 
     const containerVariants = {
-        hidden: { opacity: 0 },
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
         visible: {
             opacity: 1,
+            y: 0,
             transition: {
+                duration: 0.6,
                 staggerChildren: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
         visible: {
             opacity: 1,
             y: 0,
@@ -72,7 +88,7 @@ const About = () => {
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-gray-600 mb-4">
-                            {`I'm a Software Engineer with {experience} years of experience, specializing in building scalable backend systems and cloud infrastructure.`}
+                            {`I'm a Software Engineer with ${experience} years of experience, specializing in building scalable backend systems and cloud infrastructure.`}
                         </motion.p>
                         <motion.p variants={itemVariants} className="text-gray-600">
                             {`My expertise lies in designing and implementing robust backend solutions that power today&apos;s modern applications.`}
@@ -99,16 +115,23 @@ const About = () => {
 
                 {/* Expertise Section */}
                 <motion.div
+                    ref={expertiseRef}
                     className="mt-24"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isExpertiseInView ? "visible" : "hidden"}
                 >
-                    <h2 className="text-3xl font-bold text-center mb-12">My Expertise</h2>
+                    <motion.h2
+                        variants={itemVariants}
+                        className="text-3xl font-bold text-center mb-12"
+                    >
+                        My Expertise
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {skills.map((skill, index) => (
                             <motion.div
                                 key={index}
+                                variants={itemVariants}
                                 className="p-6 rounded-lg bg-white shadow-md card-hover"
                                 whileHover={{ y: -10 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 10 }}

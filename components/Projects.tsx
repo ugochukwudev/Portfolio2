@@ -7,7 +7,10 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
+    const isInView = useInView(ref, {
+        once: true,
+        amount: 0.3
+    });
 
     const projects = [
         {
@@ -163,17 +166,25 @@ const Projects = () => {
     ];
 
     const containerVariants = {
-        hidden: { opacity: 0 },
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
         visible: {
             opacity: 1,
+            y: 0,
             transition: {
+                duration: 0.6,
                 staggerChildren: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
         visible: {
             opacity: 1,
             y: 0,
@@ -185,6 +196,7 @@ const Projects = () => {
         <section id="projects" className="py-20 px-4 lg:px-0">
             <div className="max-w-7xl mx-auto">
                 <motion.div
+                    ref={ref}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.6 }}
@@ -197,7 +209,6 @@ const Projects = () => {
                 </motion.div>
 
                 <motion.div
-                    ref={ref}
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}

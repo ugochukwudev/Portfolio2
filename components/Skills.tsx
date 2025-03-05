@@ -33,7 +33,10 @@ interface SkillItem {
 
 const Skills = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.1 });
+    const isInView = useInView(ref, {
+        once: true,
+        amount: 0.3
+    });
 
     // Organize skills by category for better presentation
     const backendTech: SkillItem[] = [
@@ -78,24 +81,32 @@ const Skills = () => {
         { icon: SiRust, name: "Rust" }
     ];
 
-    // const containerVariants = {
-    //     hidden: { opacity: 0 },
-    //     visible: {
-    //         opacity: 1,
-    //         transition: {
-    //             staggerChildren: 0.05
-    //         }
-    //     }
-    // };
+    const containerVariants = {
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                staggerChildren: 0.2
+            }
+        }
+    };
 
-    // const itemVariants = {
-    //     hidden: { opacity: 0, y: 20 },
-    //     visible: {
-    //         opacity: 1,
-    //         y: 0,
-    //         transition: { duration: 0.5 }
-    //     }
-    // };
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 20
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 }
+        }
+    };
 
     // Helper function to render skill section
     const renderSkillSection = (title: string, skills: SkillItem[]) => (
