@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, ChangeEvent, FormEvent } from "react";
-import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
     const ref = useRef(null);

@@ -2,21 +2,32 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { FaNodeJs, FaAws, FaDocker, FaGitAlt } from "react-icons/fa";
 import {
-    FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs,
-    FaAws, FaDocker, FaGitAlt
-} from "react-icons/fa";
-import {
-    SiTypescript, SiMongodb, SiPostgresql, SiNextdotjs,
-    SiExpress, SiTailwindcss, SiFirebase, SiRedux,
-    SiNestjs, SiAmazoncloudwatch, SiTerraform, SiJenkins,
-    SiKubernetes, SiDynatrace, SiElasticsearch, SiRust, SiJira,
-    SiAwslambda, SiGrafana, SiPrometheus, SiAmazonrds
+    SiTypescript,
+    SiJavascript,
+    SiMongodb,
+    SiPostgresql,
+    SiExpress,
+    SiNestjs,
+    SiAwslambda,
+    SiAmazoncloudwatch,
+    SiTerraform,
+    SiJenkins,
+    SiKubernetes,
+    SiDynatrace,
+    SiElasticsearch,
+    SiRust,
+    SiJira,
+    SiGrafana,
+    SiPrometheus,
+    SiAmazonrds,
+    SiFirebase
 } from "react-icons/si";
 
 // Define skill item type
 interface SkillItem {
-    icon: React.ReactNode;
+    icon: React.ComponentType<{ size?: number }>;
     name: string;
 }
 
@@ -26,96 +37,81 @@ const Skills = () => {
 
     // Organize skills by category for better presentation
     const backendTech: SkillItem[] = [
-        { icon: <FaNodeJs size={48} />, name: "Node.js" },
-        { icon: <SiExpress size={48} />, name: "Express" },
-        { icon: <SiNestjs size={48} />, name: "NestJS" },
-        { icon: <SiRust size={48} />, name: "Rust" }
+        { icon: FaNodeJs, name: "Node.js" },
+        { icon: SiExpress, name: "Express.js" },
+        { icon: SiNestjs, name: "NestJS" },
+        { icon: SiTypescript, name: "TypeScript" },
+        { icon: SiJavascript, name: "JavaScript" },
+        { icon: SiRust, name: "Rust" }
     ];
 
     const databases: SkillItem[] = [
-        { icon: <SiMongodb size={48} />, name: "MongoDB" },
-        { icon: <SiPostgresql size={48} />, name: "PostgreSQL" },
-        { icon: <SiAmazonrds size={48} />, name: "Amazon RDS" },
-        { icon: <SiFirebase size={48} />, name: "Firebase" }
+        { icon: SiMongodb, name: "MongoDB" },
+        { icon: SiPostgresql, name: "PostgreSQL" },
+        { icon: SiAmazonrds, name: "Amazon RDS" },
+        { icon: SiFirebase, name: "Firebase" }
     ];
 
     const cloudInfra: SkillItem[] = [
-        { icon: <FaAws size={48} />, name: "AWS" },
-        { icon: <SiAwslambda size={48} />, name: "Lambda" },
-        { icon: <SiAmazoncloudwatch size={48} />, name: "CloudWatch" },
-        { icon: <SiTerraform size={48} />, name: "Terraform" },
-        { icon: <SiKubernetes size={48} />, name: "Kubernetes" }
+        { icon: FaAws, name: "AWS" },
+        { icon: SiAwslambda, name: "Lambda" },
+        { icon: SiAmazoncloudwatch, name: "CloudWatch" },
+        { icon: SiTerraform, name: "Terraform" },
+        { icon: SiKubernetes, name: "Kubernetes" }
     ];
 
     const devOpsTools: SkillItem[] = [
-        { icon: <FaDocker size={48} />, name: "Docker" },
-        { icon: <SiJenkins size={48} />, name: "Jenkins" },
-        { icon: <FaGitAlt size={48} />, name: "Git" },
-        { icon: <SiJira size={48} />, name: "Jira" }
+        { icon: FaDocker, name: "Docker" },
+        { icon: SiJenkins, name: "Jenkins" },
+        { icon: FaGitAlt, name: "Git" },
+        { icon: SiJira, name: "Jira" }
     ];
 
     const monitoringTools: SkillItem[] = [
-        { icon: <SiDynatrace size={48} />, name: "Dynatrace" },
-        { icon: <SiElasticsearch size={48} />, name: "ELK Stack" },
-        { icon: <SiGrafana size={48} />, name: "Grafana" },
-        { icon: <SiPrometheus size={48} />, name: "Prometheus" }
+        { icon: SiDynatrace, name: "Dynatrace" },
+        { icon: SiElasticsearch, name: "ELK Stack" },
+        { icon: SiGrafana, name: "Grafana" },
+        { icon: SiPrometheus, name: "Prometheus" }
     ];
 
     const languages: SkillItem[] = [
-        { icon: <FaJs size={48} />, name: "JavaScript" },
-        { icon: <SiTypescript size={48} />, name: "TypeScript" },
-        { icon: <SiRust size={48} />, name: "Rust" }
+        { icon: SiRust, name: "Rust" }
     ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.05
-            }
-        }
-    };
+    // const containerVariants = {
+    //     hidden: { opacity: 0 },
+    //     visible: {
+    //         opacity: 1,
+    //         transition: {
+    //             staggerChildren: 0.05
+    //         }
+    //     }
+    // };
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5 }
-        }
-    };
+    // const itemVariants = {
+    //     hidden: { opacity: 0, y: 20 },
+    //     visible: {
+    //         opacity: 1,
+    //         y: 0,
+    //         transition: { duration: 0.5 }
+    //     }
+    // };
 
     // Helper function to render skill section
     const renderSkillSection = (title: string, skills: SkillItem[]) => (
-        <div>
-            <motion.h3
-                className="text-2xl font-bold mb-6 pl-4 border-l-4 border-accent-color"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.6 }}
-            >
-                {title}
-            </motion.h3>
-
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-16"
-            >
-                {skills.map((skill: SkillItem, index: number) => (
-                    <motion.div
-                        key={index}
-                        variants={itemVariants}
-                        className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                        whileHover={{ scale: 1.05, y: -5 }}
-                    >
-                        <div className="text-accent-color mb-3">{skill.icon}</div>
-                        <p className="font-medium">{skill.name}</p>
-                    </motion.div>
-                ))}
-            </motion.div>
+        <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4">{title}</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {skills.map((skill, index) => {
+                    const Icon = skill.icon;
+                    return (
+                        <div key={index} className="flex flex-col items-center gap-2">
+                            <Icon size={48} />
+                            <span className="text-sm">{skill.name}</span>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 

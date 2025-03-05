@@ -7,7 +7,8 @@ import { FaServer, FaCloud, FaDatabase, FaSitemap } from "react-icons/fa";
 
 const About = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.3 });
+    const isInView = useInView(ref, { once: false, amount: 0.1 });
+    //const experience = "4+";
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -70,15 +71,17 @@ const About = () => {
                             <span className="block w-20 h-1 bg-accent-color mt-4"></span>
                         </motion.h2>
 
-                        <motion.p variants={itemVariants} className="text-gray-600 mb-6">
-                            I'm a passionate Software Engineer with expertise in building robust, scalable, and high-performance backend systems.
-                            With a strong foundation in server-side technologies and cloud infrastructure, I create resilient and maintainable solutions.
+                        <motion.p variants={itemVariants} className="text-gray-600 mb-4">
+                            {`I'm a Software Engineer with {experience} years of experience, specializing in building scalable backend systems and cloud infrastructure.`}
+                        </motion.p>
+                        <motion.p variants={itemVariants} className="text-gray-600">
+                            {`My expertise lies in designing and implementing robust backend solutions that power today&apos;s modern applications.`}
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-gray-600 mb-8">
-                            My approach combines technical excellence with methodical problem-solving. I enjoy working on challenging projects that require
+                            {`My approach combines technical excellence with methodical problem-solving. I enjoy working on challenging projects that require
                             innovative thinking and attention to detail in system architecture. When I'm not coding, you can find me exploring new technologies, contributing to
-                            open-source projects, or optimizing cloud infrastructure.
+                            open-source projects, or optimizing cloud infrastructure.`}
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 text-center mt-10">
