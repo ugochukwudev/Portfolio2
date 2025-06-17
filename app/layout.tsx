@@ -60,17 +60,20 @@ export const metadata: Metadata = {
       url: "/profile.jpeg",
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+
   verification: {
     google: "your-google-verification-code", // Add this when you have it
   },
   alternates: {
     canonical: "https://your-domain.com",
   },
+  metadataBase: new URL('https://your-domain.com'),
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

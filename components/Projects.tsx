@@ -193,76 +193,125 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="py-20 px-4 lg:px-0">
-            <div className="max-w-7xl mx-auto">
+        <section id="projects" className="section-padding bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-32 right-20 w-40 h-40 rounded-full" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
+                <div className="absolute bottom-32 left-20 w-32 h-32 rounded-full" style={{ background: 'linear-gradient(135deg, #c238b0, #b0c238)' }}></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full" style={{ background: 'linear-gradient(135deg, #38c24a, #b0c238)' }}></div>
+            </div>
+
+            <div className="container-custom relative z-10">
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-20"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        A selection of my recent work. These projects showcase my skills and experience in developing modern applications.
-                    </p>
+                    <motion.h2
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text-primary"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        Featured Projects
+                    </motion.h2>
+                    <motion.p
+                        className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4 sm:px-0"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        A curated selection of my recent work showcasing <span className="gradient-text-secondary font-semibold">innovative solutions</span> and technical expertise in developing modern, scalable applications.
+                    </motion.p>
+                    <div className="w-32 h-1 rounded-full mx-auto" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
                 </motion.div>
 
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-0"
                 >
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                            className="group glass-effect rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                            whileHover={{ y: -10, scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
-                            <div className="relative h-[300px] w-full overflow-hidden bg-gray-100">
+                            {/* Project Image with Gradient Overlay */}
+                            <div className="relative h-48 sm:h-56 lg:h-[320px] w-full overflow-hidden bg-gray-100">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
                                     fill
                                     style={{ objectFit: "cover" }}
-                                    className="transition-transform duration-500 hover:scale-105"
+                                    className="transition-transform duration-700 group-hover:scale-110"
                                     priority={index === 0}
                                     quality={100}
                                 />
-                            </div>
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                                    style={{ background: `linear-gradient(135deg, ${index % 3 === 0 ? '#4a38c2, #8f38c2' : index % 3 === 1 ? '#c238b0, #b0c238' : '#38c24a, #b0c238'})` }}>
+                                </div>
 
-                            <div className="p-6">
-                                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                                {project.role && (
-                                    <div className="flex items-center gap-2 mb-3">
-                                        <span className="bg-accent-color/10 text-accent-color px-3 py-1 rounded-full text-sm font-medium">
-                                            {project.role}
+                                {/* Project Type Badge */}
+                                {project.type && (
+                                    <div className="absolute top-4 right-4">
+                                        <span className="glass-effect px-4 py-2 rounded-full text-sm font-semibold text-white backdrop-blur-md"
+                                            style={{ background: `linear-gradient(135deg, ${index % 3 === 0 ? '#4a38c2, #8f38c2' : index % 3 === 1 ? '#c238b0, #b0c238' : '#38c24a, #b0c238'})` }}>
+                                            {project.type}
                                         </span>
-                                        {project.type && (
-                                            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">
-                                                {project.type}
-                                            </span>
-                                        )}
                                     </div>
                                 )}
-                                <p className="text-gray-600 mb-4">{project.description}</p>
+                            </div>
 
-                                <div className="flex flex-wrap gap-2 mb-6">
+                            {/* Project Content */}
+                            <div className="p-4 sm:p-6 lg:p-8">
+                                <div className="mb-4 sm:mb-6">
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white group-hover:gradient-text-primary transition-all duration-300">
+                                        {project.title}
+                                    </h3>
+                                    {project.role && (
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <span className="px-4 py-2 rounded-full text-sm font-semibold text-white"
+                                                style={{ background: `linear-gradient(135deg, ${index % 3 === 0 ? '#4a38c2, #8f38c2' : index % 3 === 1 ? '#c238b0, #b0c238' : '#38c24a, #b0c238'})` }}>
+                                                {project.role}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Stack */}
+                                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                                     {project.tags.map((tag, i) => (
-                                        <span key={i} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                                        <motion.span
+                                            key={i}
+                                            className="bg-gray-700 text-gray-200 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium hover:bg-gray-600 transition-colors cursor-pointer"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
                                             {tag}
-                                        </span>
+                                        </motion.span>
                                     ))}
                                 </div>
 
-                                <div className="flex gap-4">
+                                {/* Action Buttons */}
+                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                     <motion.a
                                         href={project.links.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-gray-700 hover:text-accent-color transition-colors"
-                                        whileHover={{ scale: 1.05 }}
+                                        className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl font-semibold text-white shadow-lg transition-all duration-300 w-full sm:w-auto"
+                                        style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
+                                        whileHover={{ scale: 1.05, y: -2 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <FaGithub size={18} />
@@ -273,12 +322,20 @@ const Projects = () => {
                                         href={project.links.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-gray-700 hover:text-accent-color transition-colors"
-                                        whileHover={{ scale: 1.05 }}
+                                        className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl font-semibold border-2 transition-all duration-300 hover:text-white w-full sm:w-auto"
+                                        style={{
+                                            borderColor: '#c238b0',
+                                            color: '#c238b0'
+                                        }}
+                                        whileHover={{
+                                            scale: 1.05,
+                                            y: -2,
+                                            background: 'linear-gradient(135deg, #c238b0, #b0c238)'
+                                        }}
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <FaExternalLinkAlt size={16} />
-                                        <span>Live</span>
+                                        <span>Live Demo</span>
                                     </motion.a>
                                 </div>
                             </div>
@@ -286,26 +343,57 @@ const Projects = () => {
                     ))}
                 </motion.div>
 
+                {/* Professional CTA Section */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-center mt-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ delay: 0.8, duration: 0.8 }}
+                    className="text-center mt-20"
                 >
-                    <motion.a
-                        href="https://github.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-black text-white rounded-full px-8 py-3 hover:bg-gray-800 transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        View All Projects
-                    </motion.a>
+                    <div className="glass-effect p-8 rounded-3xl max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold gradient-text-secondary mb-4">
+                            Interested in More?
+                        </h3>
+                        <p className="text-gray-600 mb-8 leading-relaxed">
+                            Explore my complete portfolio on GitHub to see more projects, contributions, and technical experiments.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <motion.a
+                                href="https://github.com/ugochukwudev"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white shadow-lg transition-all duration-300"
+                                style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
+                                whileHover={{ scale: 1.05, y: -3 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <FaGithub size={20} />
+                                <span>View All Projects</span>
+                            </motion.a>
+
+                            <motion.a
+                                href="#contact"
+                                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold border-2 transition-all duration-300 hover:text-white"
+                                style={{
+                                    borderColor: '#c238b0',
+                                    color: '#c238b0'
+                                }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    y: -3,
+                                    background: 'linear-gradient(135deg, #c238b0, #b0c238)'
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <span>{`Let's Collaborate`}</span>
+                            </motion.a>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
         </section>
     );
 };
 
-export default Projects; 
+export default Projects;
