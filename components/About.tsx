@@ -17,7 +17,7 @@ export default function About() {
         once: true,
         amount: 0.3
     });
-    //const experience = "4+";
+    const experience = "4+";
 
     const containerVariants = {
         hidden: {
@@ -144,7 +144,7 @@ export default function About() {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                            {`I'm a <span className="gradient-text-primary font-semibold">Software Engineer</span> with <span className="gradient-text-secondary font-semibold">{experience} years of experience</span>, specializing in building scalable backend systems and cloud infrastructure that power enterprise-level applications.`}
+                            {`I'm a`} <span className="gradient-text-primary font-semibold">Software Engineer</span> with <span className="gradient-text-secondary font-semibold">{experience} years of experience</span>, specializing in building scalable backend systems and cloud infrastructure that power enterprise-level applications.
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-300 leading-relaxed">
