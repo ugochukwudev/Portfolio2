@@ -154,7 +154,7 @@ const Contact = () => {
                         className="max-w-3xl mx-auto"
                     >
                         <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 px-4 sm:px-0">
-                            Have a <span className="gradient-text-secondary font-semibold">project in mind</span> {`or want to collaborate? I'm always excited to work on innovative backend solutions and scalable systems.`}
+                            Have a <span className="gradient-text-secondary font-semibold">project in mind</span> {`or want to collaborate? I'm always excited to work on innovative web solutions and scalable systems.`}
                         </p>
                         <p className="text-sm sm:text-base text-gray-400 px-4 sm:px-0">
                             Feel free to reach out using the form below or through my contact information.

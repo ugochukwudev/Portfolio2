@@ -60,7 +60,7 @@ const Navbar = () => {
                             style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}>
                             <div className="w-full h-full rounded-full bg-white p-0.5">
                                 <Image
-                                    alt="Ugochukwu Paul - Backend Engineer"
+                                    alt="Ugochukwu Paul - Web Developer"
                                     src="/profile.jpeg"
                                     className="rounded-full object-cover"
                                     width={44}
@@ -73,7 +73,7 @@ const Navbar = () => {
                         <h1 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
                             Ugochukwu Paul
                         </h1>
-                        <p className="text-gray-300 text-sm font-medium">Backend Engineer</p>
+                        <p className="text-gray-300 text-sm font-medium">Web Developer</p>
                     </section>
                 </motion.div>
 

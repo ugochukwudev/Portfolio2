@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { FaNodeJs, FaAws, FaDocker, FaGitAlt } from "react-icons/fa";
+import { FaNodeJs, FaAws, FaDocker, FaGitAlt, FaReact } from "react-icons/fa";
 import {
     SiTypescript,
     SiJavascript,
@@ -23,7 +23,10 @@ import {
     SiPrometheus,
     SiAmazonrds,
     SiFirebase,
-    SiPuppeteer
+    SiPuppeteer,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiRedux
 } from "react-icons/si";
 
 // Define skill item type
@@ -59,7 +62,12 @@ const Skills = () => {
     }, []);
 
     // Organize skills by category for better presentation
-    const backendTech: SkillItem[] = [
+    const webTech: SkillItem[] = [
+        { icon: FaReact, name: "React" },
+        { icon: SiNextdotjs, name: "Next.js" },
+        { icon: SiTailwindcss, name: "Tailwind CSS" },
+        { icon: SiRedux, name: "Redux" },
+        
         { icon: FaNodeJs, name: "Node.js" },
         { icon: SiExpress, name: "Express.js" },
         { icon: SiNestjs, name: "NestJS" },
@@ -209,7 +217,7 @@ const Skills = () => {
                         className="max-w-3xl mx-auto"
                     >
                         <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 px-4 sm:px-0">
-                            I specialize in <span className="gradient-text-secondary font-semibold">backend engineering</span> and <span className="gradient-text-secondary font-semibold">cloud infrastructure</span> with a focus on building scalable, high-performance systems.
+                            I specialize in <span className="gradient-text-secondary font-semibold">web development</span> and <span className="gradient-text-secondary font-semibold">cloud infrastructure</span> with a focus on building scalable, high-performance systems.
                         </p>
                         <p className="text-sm sm:text-base text-gray-400 px-4 sm:px-0">
                             Here are the technologies and tools I work with to deliver robust solutions.
@@ -227,7 +235,7 @@ const Skills = () => {
                 </motion.div>
 
                 <div ref={ref} className="space-y-4">
-                    {renderSkillSection("Backend Technologies", backendTech, 0)}
+                    {renderSkillSection("Web Technologies", webTech, 0)}
                     {renderSkillSection("Database Systems", databases, 1)}
                     {renderSkillSection("Cloud & Infrastructure", cloudInfra, 2)}
                     {renderSkillSection("DevOps Tools", devOpsTools, 3)}

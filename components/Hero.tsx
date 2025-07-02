@@ -75,7 +75,7 @@ const Hero = () => {
                                         <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
                                             <Image
                                                 src="/profile.png"
-                                                alt="Ugochukwu Paul - Backend Software Engineer"
+                                                alt="Ugochukwu Paul - Web Developer"
                                                 fill
                                                 style={{ objectFit: "contain" }}
                                                 className="transition-transform duration-500 hover:scale-110"
@@ -133,8 +133,8 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 1 }}
                         >
-                            Backend <span className="gradient-text">Software</span><br />
-                            <span className="gradient-text-secondary">Engineer</span>
+                            Web <span className="gradient-text">Developer</span><br />
+                            <span className="gradient-text-secondary"></span>
                         </motion.h1>
 
                         <motion.div
@@ -144,7 +144,7 @@ const Hero = () => {
                             className="max-w-3xl mx-auto mb-8 sm:mb-12 px-4 sm:px-0"
                         >
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-                                Crafting <strong className="text-white">robust, scalable backend systems</strong> and APIs that power modern applications.
+                                Crafting <strong className="text-white">robust, scalable web systems</strong> and APIs that power modern applications.
                             </p>
                             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                                 Specializing in cloud architecture, database design, and system optimization with 4+ years of experience

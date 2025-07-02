@@ -47,7 +47,7 @@ export default function About() {
     };
 
     const skills = [
-        { icon: <FaServer size={24} />, title: "Backend Engineering", desc: "Building robust, scalable server-side applications and APIs with high performance" },
+        { icon: <FaServer size={24} />, title: "Web Development", desc: "Building robust, scalable web applications and APIs with high performance" },
         { icon: <FaCloud size={24} />, title: "Cloud Engineering", desc: "Designing and implementing cloud-native solutions with focus on scalability and reliability" },
         { icon: <FaDatabase size={24} />, title: "Database Design", desc: "Architecting efficient database schemas and optimizing for performance and scale" },
         { icon: <FaSitemap size={24} />, title: "System Design", desc: "Creating resilient distributed systems with focus on scalability and maintainability" },
@@ -87,7 +87,7 @@ export default function About() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        Passionate backend engineer with <span className="gradient-text-secondary font-semibold">4+ years of expertise</span> in building scalable,
+                        Passionate web developer with <span className="gradient-text-secondary font-semibold">4+ years of expertise</span> in building scalable,
                         high-performance systems that power modern applications and drive business growth.
                     </motion.p>
                 </motion.div>
@@ -138,17 +138,17 @@ export default function About() {
                     <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
                         <motion.div variants={itemVariants}>
                             <h3 className="text-2xl font-bold gradient-text-secondary mb-4">
-                                Backend Engineering Excellence
+                                Web Development Excellence
                             </h3>
                             <div className="w-24 h-1 rounded-full mb-6" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                            {`I'm a`} <span className="gradient-text-primary font-semibold">Software Engineer</span> with <span className="gradient-text-secondary font-semibold">{experience} years of experience</span>, specializing in building scalable backend systems and cloud infrastructure that power enterprise-level applications.
+                            {`I'm a`} <span className="gradient-text-primary font-semibold">Web Developer</span> with <span className="gradient-text-secondary font-semibold">{experience} years of experience</span>, specializing in building scalable web applications and cloud infrastructure that power enterprise-level applications.
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                            My expertise lies in designing and implementing <span className="gradient-text-accent font-semibold">robust backend solutions</span> that handle millions of requests while maintaining optimal performance and security standards.
+                            My expertise lies in designing and implementing <span className="gradient-text-accent font-semibold">robust web solutions</span> that handle millions of requests while maintaining optimal performance and security standards.
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg text-gray-300 leading-relaxed">
@@ -195,7 +195,7 @@ export default function About() {
                             My Expertise
                         </h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Specialized skills and technologies that drive <span className="gradient-text-secondary font-semibold">exceptional backend solutions</span>
+                            Specialized skills and technologies that drive <span className="gradient-text-secondary font-semibold">exceptional web solutions</span>
                         </p>
                         <div className="w-32 h-1 rounded-full mx-auto mt-8" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
                     </motion.div>

@@ -10,11 +10,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ugochukwu Paul | Software Engineer",
-  description: "Experienced Software Engineer specializing in backend development, cloud engineering, and system design. Building robust and scalable solutions with modern technologies.",
+  title: "Ugochukwu Paul | Web Developer",
+  description: "Experienced Web Developer specializing in web development, cloud engineering, and system design. Building robust and scalable solutions with modern technologies.",
   keywords: [
-    "software engineer",
-    "backend developer",
+    "web developer",
+    "web developer",
     "cloud engineer",
     "system design",
     "Node.js",
@@ -32,22 +32,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://your-domain.com",
-    siteName: "Ugochukwu Paul - Software Engineer",
-    title: "Ugochukwu Paul | Backend Software Engineer",
-    description: "Experienced Software Engineer specializing in backend development, cloud engineering, and system design.",
+    siteName: "Ugochukwu Paul - Web Developer",
+    title: "Ugochukwu Paul | Web Developer",
+    description: "Experienced Web Developer specializing in web development, cloud engineering, and system design.",
     images: [
       {
         url: "/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Ugochukwu Paul - Software Engineer",
+        alt: "Ugochukwu Paul - Web Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ugochukwu Paul | Backend Software Engineer",
-    description: "Experienced Software Engineer specializing in backend development, cloud engineering, and system design.",
+    title: "Ugochukwu Paul | Web Developer",
+    description: "Experienced Web Developer specializing in web development, cloud engineering, and system design.",
     images: ["/profile.jpeg"],
     creator: "@your-twitter-handle",
   },

@@ -27,7 +27,7 @@ const ResumePage = () => {
             </div>
 
             {/* Header */}
-            <motion.div 
+            <motion.div
                 className="relative z-10 p-4 md:p-8"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const ResumePage = () => {
             >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                     <Link href="/" className="group">
-                        <motion.div 
+                        <motion.div
                             className="flex items-center gap-3 text-white hover:text-purple-400 transition-colors"
                             whileHover={{ x: -5 }}
                         >
@@ -43,7 +43,7 @@ const ResumePage = () => {
                             <span className="text-lg font-medium">Back to Portfolio</span>
                         </motion.div>
                     </Link>
-                    
+
                     <motion.button
                         onClick={handleDownload}
                         className="flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -58,7 +58,7 @@ const ResumePage = () => {
                 </div>
 
                 {/* Title Section */}
-                <motion.div 
+                <motion.div
                     className="text-center mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -78,13 +78,13 @@ const ResumePage = () => {
                         </h1>
                     </div>
                     <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                        Backend Software Engineer specializing in scalable systems and cloud architecture
+                        Web Developer specializing in scalable systems and cloud architecture
                     </p>
                 </motion.div>
             </motion.div>
 
             {/* PDF Viewer Container */}
-            <motion.div 
+            <motion.div
                 className="relative z-10 px-4 md:px-8 pb-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,9 +100,9 @@ const ResumePage = () => {
                                 style={{ border: 'none' }}
                             />
                         </div>
-                        
+
                         {/* Mobile Download Button */}
-                        <motion.div 
+                        <motion.div
                             className="mt-6 text-center md:hidden"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -124,7 +124,7 @@ const ResumePage = () => {
             </motion.div>
 
             {/* Footer Info */}
-            <motion.div 
+            <motion.div
                 className="relative z-10 text-center pb-8 px-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

@@ -34,7 +34,7 @@ const Footer = () => {
           >
             <h3 className="text-2xl font-bold mb-4 text-white">Ugochukwu Paul</h3>
             <p className="text-gray-400 mb-6">
-              Software Engineer specializing in creating beautiful, functional, and user-friendly
+              Web Developer specializing in creating beautiful, functional, and user-friendly
               digital experiences with clean code and modern technologies.
             </p>
             <div className="flex gap-4">
