@@ -7,7 +7,7 @@ import Link from "next/link";
 const ResumePage = () => {
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = "/ugo's-cv copy.pdf";
+        link.href = "/cv.pdf";
         link.download = "Ugochukwu-Paul-Resume.pdf";
         document.body.appendChild(link);
         link.click();
@@ -94,7 +94,7 @@ const ResumePage = () => {
                     <div className="glass-effect rounded-3xl p-4 md:p-8 shadow-2xl">
                         <div className="bg-white rounded-2xl overflow-hidden shadow-inner">
                             <iframe
-                                src="/ugo's-cv copy.pdf"
+                                src="/cv.pdf"
                                 className="w-full h-[600px] md:h-[800px] lg:h-[900px]"
                                 title="Ugochukwu Paul Resume"
                                 style={{ border: 'none' }}

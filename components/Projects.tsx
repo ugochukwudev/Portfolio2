@@ -15,7 +15,7 @@ const Projects = () => {
     const projects = [
         {
             title: "Blockroll - Fintech Platform",
-            role: "Web Developer",
+            role: "Software Engineer",
             description: "Contributed to building a sophisticated fintech platform as part of the engineering team at Blockroll. Led the development of key features including digital wallet management, seamless money transfers, multi-currency support, and real-time transaction tracking. Implemented robust analytics dashboard focusing on scalability and security.",
             image: "/blockroll.png",
             tags: [
@@ -86,13 +86,13 @@ const Projects = () => {
             ],
             links: {
                 github: "https://github.com/ugochukwudev",
-                live: "https://techgix.xyz"
+                live: "https://techgix.ng"
             },
             type: "Personal Project"
         },
         {
             title: "Arewabooks - Hausa Language Book Platform",
-            role: "Web Developer",
+            role: "Software Engineer",
             description: "Developed a comprehensive digital platform for buying, selling, and reading Hausa language books. Built both web and mobile applications with features including e-commerce functionality, digital book reader, and content management system. Implemented secure payment processing and robust user authentication.",
             image: "/arewabooks.png",
             tags: [
