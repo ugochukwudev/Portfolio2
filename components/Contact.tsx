@@ -125,11 +125,11 @@ const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="relative py-24 px-4 lg:px-0 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}>
+        <section id="contact" className="relative py-24 px-4 lg:px-0 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
             {/* Gradient Background Elements */}
-            <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-10" style={{ background: 'linear-gradient(135deg, #c238b0, #b0c238)' }}></div>
-            <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-5" style={{ background: 'linear-gradient(135deg, #38c24a, #4a38c2)' }}></div>
+            <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10 bg-gradient-to-br from-blue-600 to-indigo-600"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-10 bg-gradient-to-br from-indigo-600 to-blue-700"></div>
+            <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-5 bg-gradient-to-br from-slate-600 to-gray-600"></div>
 
             <div className="container-custom relative z-10">
                 <motion.div
@@ -154,7 +154,7 @@ const Contact = () => {
                         className="max-w-3xl mx-auto"
                     >
                         <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 px-4 sm:px-0">
-                            Have a <span className="gradient-text-secondary font-semibold">project in mind</span> {`or want to collaborate? I'm always excited to work on innovative backend solutions and scalable systems.`}
+                            Have a <span className="gradient-text-secondary font-semibold">project in mind</span> or want to collaborate? I'm always excited to work on innovative web solutions and scalable applications.
                         </p>
                         <p className="text-sm sm:text-base text-gray-400 px-4 sm:px-0">
                             Feel free to reach out using the form below or through my contact information.
@@ -166,8 +166,7 @@ const Contact = () => {
                         initial={{ scaleX: 0 }}
                         animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
-                        className="w-24 h-1 mx-auto mt-8 rounded-full"
-                        style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
+                        className="w-24 h-1 mx-auto mt-8 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"
                     ></motion.div>
                 </motion.div>
 

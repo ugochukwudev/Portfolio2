@@ -56,11 +56,10 @@ const Navbar = () => {
                     }}
                 >
                     <div className="relative">
-                        <div className="w-12 h-12 rounded-full p-0.5"
-                            style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}>
+                        <div className="w-12 h-12 rounded-full p-0.5 bg-gradient-to-br from-blue-600 to-indigo-600">
                             <div className="w-full h-full rounded-full bg-white p-0.5">
                                 <Image
-                                    alt="Ugochukwu Paul - Web Developer"
+                                    alt="Ikegbulam Ugochukwu Paul - Frontend Developer"
                                     src="/profile.jpeg"
                                     className="rounded-full object-cover"
                                     width={44}
@@ -70,8 +69,8 @@ const Navbar = () => {
                         </div>
                     </div>
                     <section className="hidden sm:block">
-                        <h1 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
-                            Ugochukwu Paul
+                        <h1 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                            Ikegbulam Ugochukwu Paul
                         </h1>
                         <p className="text-gray-300 text-sm font-medium">Web Developer</p>
                     </section>
@@ -88,7 +87,7 @@ const Navbar = () => {
                                 : "text-gray-300 hover:text-white"
                                 } cursor-pointer`}
                             style={active === item ? {
-                                background: 'linear-gradient(135deg, #4a38c2, #8f38c2)'
+                                background: 'linear-gradient(135deg, #2563eb, #4f46e5)'
                             } : {}}
                             onClick={() => setActive(item)}
                             whileHover={{
@@ -100,8 +99,7 @@ const Navbar = () => {
                         >
                             {active === item && (
                                 <motion.div
-                                    className="absolute inset-0 rounded-lg"
-                                    style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
+                                    className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600"
                                     layoutId="activeTab"
                                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 />
@@ -153,7 +151,7 @@ const Navbar = () => {
                                         : "text-gray-300 hover:bg-gray-800"
                                         } cursor-pointer`}
                                     style={active === item ? {
-                                        background: 'linear-gradient(135deg, #4a38c2, #8f38c2)'
+                                        background: 'linear-gradient(135deg, #2563eb, #4f46e5)'
                                     } : {}}
                                     onClick={() => {
                                         setActive(item);

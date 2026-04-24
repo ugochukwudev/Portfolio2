@@ -32,10 +32,10 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-white">Ugochukwu Paul</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">Ikegbulam Ugochukwu Paul</h3>
             <p className="text-gray-400 mb-6">
-              Software Engineer specializing in creating beautiful, functional, and user-friendly
-              digital experiences with clean code and modern technologies.
+              Frontend Developer & Fullstack Engineer specializing in creating beautiful, functional, and user-friendly
+              digital experiences with modern web technologies and clean code.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link, index) => (
@@ -107,7 +107,7 @@ const Footer = () => {
               </motion.a>
             </div>
           </motion.div>
-                </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -117,11 +117,11 @@ const Footer = () => {
           className="mt-12 pt-6 border-t border-gray-700 text-center text-gray-400"
         >
           <p>
-            © {currentYear} Ugochukwu Paul. All rights reserved. Made with{" "}
+            © {currentYear} Ikegbulam Ugochukwu Paul. All rights reserved. Made with{" "}
             <FaHeart className="inline text-red-500 mx-1" size={14} /> using Next.js and Tailwind CSS.
           </p>
         </motion.div>
-    </div>
+      </div>
     </footer>
   );
 };

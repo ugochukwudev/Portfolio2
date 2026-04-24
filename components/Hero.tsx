@@ -3,56 +3,50 @@
 import { motion } from "framer-motion";
 import { RiArrowRightUpLine, RiDownloadLine } from "react-icons/ri";
 import Image from "next/image";
-import { FaCode, FaServer, FaDatabase, FaCloud } from "react-icons/fa";
+import { FaReact, FaJs, FaCode, FaPalette } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-indigo-900/30 pt-20">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-20">
             {/* Professional background elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl"
-                    style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
-                <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl"
-                    style={{ background: 'linear-gradient(135deg, #c238b0, #b0c238)' }}></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-10 blur-3xl"
-                    style={{ background: 'linear-gradient(135deg, #38c24a, #4a38c2)' }}></div>
+                <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-gradient-to-br from-blue-600 to-indigo-600"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-0 blur-3xl bg-gradient-to-br from-indigo-600 to-blue-700"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-6 blur-3xl bg-gradient-to-br from-slate-600 to-gray-600"></div>
             </div>
 
             {/* Floating tech icons with professional styling */}
             <motion.div
-                className="absolute left-[15%] top-[25%] hidden lg:block"
+                className="absolute left-[15%] top-[25%] hidden lg:block text-blue-500/30"
                 animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                style={{ color: '#4a38c2', opacity: 0.3 }}
             >
-                <FaCode size={40} />
+                <FaReact size={40} />
             </motion.div>
 
             <motion.div
-                className="absolute right-[15%] top-[30%] hidden lg:block"
+                className="absolute right-[15%] top-[30%] hidden lg:block text-indigo-500/30"
                 animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                style={{ color: '#8f38c2', opacity: 0.3 }}
             >
-                <FaServer size={36} />
+                <SiNextdotjs size={36} />
             </motion.div>
 
             <motion.div
-                className="absolute right-[20%] bottom-[25%] hidden lg:block"
+                className="absolute right-[20%] bottom-[25%] hidden lg:block text-blue-600/30"
                 animate={{ y: [0, -10, 0], rotate: [0, 12, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                style={{ color: '#c238b0', opacity: 0.3 }}
             >
-                <FaDatabase size={38} />
+                <SiTypescript size={38} />
             </motion.div>
 
             <motion.div
-                className="absolute left-[20%] bottom-[30%] hidden lg:block"
+                className="absolute left-[20%] bottom-[30%] hidden lg:block text-slate-500/30"
                 animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
                 transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-                style={{ color: '#38c24a', opacity: 0.3 }}
             >
-                <FaCloud size={42} />
+                <FaPalette size={42} />
             </motion.div>
 
             {/* Main content container */}
@@ -69,13 +63,12 @@ const Hero = () => {
                             {/* Main image container with professional styling */}
                             <div className="relative h-[200px] w-[200px] sm:h-[240px] sm:w-[240px] md:h-[280px] md:w-[280px] lg:h-[320px] lg:w-[320px] mx-auto">
                                 {/* Gradient ring around image */}
-                                <div className="absolute inset-0 rounded-full p-1"
-                                    style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2, #c238b0)' }}>
+                                <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-br from-blue-600 to-indigo-600">
                                     <div className="w-full h-full rounded-full bg-white p-2">
                                         <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
                                             <Image
                                                 src="/profile.png"
-                                                alt="Ugochukwu Paul - Backend Software Engineer"
+                                                alt="Ikegbulam Ugochukwu Paul - Frontend Developer"
                                                 fill
                                                 style={{ objectFit: "contain" }}
                                                 className="transition-transform duration-500 hover:scale-110"
@@ -87,21 +80,19 @@ const Hero = () => {
 
                                 {/* Professional floating elements */}
                                 <motion.div
-                                    className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center"
+                                    className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center bg-gradient-to-br from-blue-600 to-indigo-600"
                                     animate={{ y: [0, -8, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
                                 >
-                                    <FaCode className="text-white" size={24} />
+                                    <FaReact className="text-white" size={24} />
                                 </motion.div>
 
                                 <motion.div
-                                    className="absolute -top-6 -left-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center"
+                                    className="absolute -top-6 -left-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center bg-gradient-to-br from-indigo-600 to-blue-700"
                                     animate={{ y: [0, 8, 0] }}
                                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                    style={{ background: 'linear-gradient(135deg, #c238b0, #b0c238)' }}
                                 >
-                                    <FaServer className="text-white" size={24} />
+                                    <FaCode className="text-white" size={24} />
                                 </motion.div>
                             </div>
                         </div>
@@ -121,9 +112,8 @@ const Hero = () => {
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="mb-6"
                         >
-                            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium"
-                                style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)', color: 'white' }}>
-                                {` 👋 Hello, I'm Ugochukwu Paul`}
+                            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                                👋 Hello, I'm Ikegbulam Ugochukwu Paul
                             </span>
                         </motion.div>
 
@@ -133,8 +123,8 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 1 }}
                         >
-                            Backend <span className="gradient-text">Software</span><br />
-                            <span className="gradient-text-secondary">Engineer</span>
+                            Web <span className="gradient-text">Developer</span><br />
+                            <span className="gradient-text-secondary">& Software Engineer</span>
                         </motion.h1>
 
                         <motion.div
@@ -144,11 +134,11 @@ const Hero = () => {
                             className="max-w-3xl mx-auto mb-8 sm:mb-12 px-4 sm:px-0"
                         >
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-                                Crafting <strong className="text-white">robust, scalable backend systems</strong> and APIs that power modern applications.
+                                Crafting <strong className="text-white">scalable web applications</strong> with modern technologies across the full development stack.
                             </p>
                             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                                Specializing in cloud architecture, database design, and system optimization with 4+ years of experience
-                                building enterprise-grade solutions that handle millions of requests.
+                                Specializing in React, Node.js, and cloud technologies with 4+ years of experience
+                                building complete solutions from frontend interfaces to backend systems.
                             </p>
                         </motion.div>
 
@@ -197,15 +187,12 @@ const Hero = () => {
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold gradient-text-accent mb-2">∞</div>
-                                <div className="text-gray-300 text-sm sm:text-base">Problems Solved</div>
+                                <div className="text-gray-300 text-sm sm:text-base">Ideas Brought to Life</div>
                             </div>
                         </motion.div>
                     </motion.article>
                 </div>
-
-
             </div>
-
         </section>
     );
 };

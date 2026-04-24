@@ -15,18 +15,18 @@ const Projects = () => {
     const projects = [
         {
             title: "Blockroll - Fintech Platform",
-            role: "Software Engineer",
-            description: "Contributed to building a sophisticated fintech platform as part of the engineering team at Blockroll. Led the development of key features including digital wallet management, seamless money transfers, multi-currency support, and real-time transaction tracking. Implemented robust analytics dashboard focusing on scalability and security.",
+            role: "Lead Frontend Engineer",
+            description: "Led frontend development for a sophisticated fintech platform, creating intuitive user interfaces for digital wallet management, seamless money transfers, and real-time transaction tracking. Implemented responsive design patterns and optimized performance for financial dashboard components.",
             image: "/blockroll.png",
             tags: [
                 "Next.js",
                 "TypeScript",
-                "Node.js",
-                "Express",
-                "MongoDB",
-                "AWS Lightsail",
+                "React",
                 "Redux",
-                "Tailwind CSS"
+                "Tailwind CSS",
+                "Framer Motion",
+                "Chart.js",
+                "Responsive Design"
             ],
             links: {
                 github: "https://github.com/ugochukwudev",
@@ -36,16 +36,16 @@ const Projects = () => {
         },
         {
             title: "Daba School - Tech Education Platform",
-            role: "Software Developer",
-            description: "Contributed to developing an innovative tech education platform focused on empowering individuals with practical skills. Built interactive learning experiences, student management systems, and course delivery infrastructure using modern web technologies.",
+            role: "Frontend Developer",
+            description: "Developed an innovative tech education platform with focus on interactive learning experiences. Built responsive user interfaces, student dashboards, and course delivery systems using modern React patterns and component-based architecture.",
             image: "/daba.png",
             tags: [
                 "Next.js",
                 "React",
-                "Vite",
-                "Node.js",
-                "Express",
-                "Tailwind CSS"
+                "TypeScript",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Responsive Design"
             ],
             links: {
                 github: "https://github.com/ugochukwudev",
@@ -55,11 +55,12 @@ const Projects = () => {
         },
         {
             title: "Ivara - UK Tech Agency Website",
-            role: "Contract Developer",
-            description: "Developed a modern, animated website for a UK-based tech agency specializing in web development, app creation, and digital marketing services. Implemented engaging user interactions with Lottie animations, dynamic content management through Sanity CMS, and responsive design principles to showcase the agency's professional services.",
+            role: "Frontend Developer",
+            description: "Crafted a modern, animated website for a UK-based tech agency with engaging user interactions using Lottie animations, responsive design principles, and seamless content management integration. Focused on performance optimization and user experience.",
             image: "/ivara.png",
             tags: [
                 "Next.js",
+                "React",
                 "Tailwind CSS",
                 "Lottie Animations",
                 "Sanity CMS",
@@ -74,14 +75,14 @@ const Projects = () => {
         },
         {
             title: "Techgix - Tech Blog & Community",
-            description: "A dynamic tech education platform and community hub focused on sharing knowledge through in-depth technical articles. Features include a modern content management system, optimized SEO, responsive design, and seamless email integration for community engagement.",
+            description: "Built a dynamic tech education platform and community hub with modern frontend architecture. Features include responsive design, optimized performance, and seamless user experience with focus on content presentation and community engagement.",
             image: "/techgix.png",
             tags: [
                 "Next.js",
                 "React",
-                "Sanity CMS",
                 "Tailwind CSS",
-                "Brevo",
+                "Sanity CMS",
+                "TypeScript",
                 "SEO Optimization"
             ],
             links: {
@@ -91,19 +92,18 @@ const Projects = () => {
             type: "Personal Project"
         },
         {
-            title: "Arewabooks - Hausa Language Book Platform",
-            role: "Software Engineer",
-            description: "Developed a comprehensive digital platform for buying, selling, and reading Hausa language books. Built both web and mobile applications with features including e-commerce functionality, digital book reader, and content management system. Implemented secure payment processing and robust user authentication.",
+            title: "Arewabooks - Digital Book Platform",
+            role: "Frontend Lead",
+            description: "Developed comprehensive frontend for a digital platform for Hausa language books. Built responsive web and mobile interfaces with e-commerce functionality, digital book reader, and content management integration using React ecosystem.",
             image: "/arewabooks.png",
             tags: [
                 "React",
                 "React Native",
                 "Next.js",
-                "Node.js",
-                "Express",
                 "Redux Saga",
-                "Sanity CMS",
-                "Tailwind CSS"
+                "Tailwind CSS",
+                "Responsive Design",
+                "Mobile Development"
             ],
             links: {
                 github: "https://github.com/ugochukwudev",
@@ -112,15 +112,15 @@ const Projects = () => {
             type: "Professional Work"
         },
         {
-            title: "Sendmail - Open Source Email API",
-            description: "An open-source email API service that simplifies sending unprofessional emails. Built with Node.js and Nodemailer, this API provides a straightforward solution for processing contact forms and handling email communications. Features include easy integration, customizable email templates, and reliable delivery.",
+            title: "Sendmail - Email API Service",
+            description: "Created a clean, intuitive interface for an open-source email API service. Built responsive documentation site and admin dashboard with focus on developer experience and ease of integration.",
             image: "/sendmail.png",
             tags: [
-                "Node.js",
-                "Nodemailer",
-                "Express",
-                "API Development",
-                "Open Source"
+                "React",
+                "Next.js",
+                "Tailwind CSS",
+                "API Documentation",
+                "Responsive Design"
             ],
             links: {
                 github: "https://github.com/ugochukwudev/sendMail",
@@ -129,17 +129,17 @@ const Projects = () => {
             type: "Open Source"
         },
         {
-            title: "Node API Logs - Express.js Logging Solution",
-            role: "Creator & Maintainer",
-            description: "Developed a cost-effective logging solution for Express.js applications in response to a company's need for affordable server monitoring. This open-source library enables developers to view request logs, track API performance, and monitor server activity without third-party services. Features include request body tracking, IP logging, response monitoring, and duration tracking with MongoDB integration.",
+            title: "Node API Logs - Developer Dashboard",
+            role: "Frontend Creator",
+            description: "Designed and built an intuitive dashboard interface for Express.js logging solution. Created responsive data visualization components for monitoring API performance, request tracking, and server activity with focus on developer experience.",
             image: "/node-api-logs.png",
             tags: [
-                "Node.js",
-                "Express.js",
+                "React",
                 "TypeScript",
-                "MongoDB",
-                "API Development",
-                "Open Source"
+                "Chart.js",
+                "Tailwind CSS",
+                "Data Visualization",
+                "Dashboard Design"
             ],
             links: {
                 github: "https://github.com/ugochukwudev/Node-API-LOGS",
@@ -148,14 +148,16 @@ const Projects = () => {
             type: "Open Source"
         },
         {
-            title: "Mote - Rust CLI Tool",
-            description: "A practical implementation of shell commands in Rust, demonstrating systems programming capabilities. This command-line tool replicates basic shell functionalities like 'cd', 'ls', and other script commands, serving as a hands-on exploration of Rust's systems programming features.",
+            title: "Interactive Portfolio Showcase",
+            description: "A modern, responsive portfolio website showcasing frontend development skills with smooth animations, interactive elements, and optimized performance. Built with focus on user experience and visual appeal.",
             image: "/shell-script.png",
             tags: [
-                "Rust",
-                "Systems Programming",
-                "CLI",
-                "Shell Scripting"
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Framer Motion",
+                "Tailwind CSS",
+                "Responsive Design"
             ],
             links: {
                 github: "https://github.com/ugochukwudev",
@@ -223,7 +225,7 @@ const Projects = () => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        A curated selection of my recent work showcasing <span className="gradient-text-secondary font-semibold">innovative solutions</span> and technical expertise in developing modern, scalable applications.
+                        A curated selection of my recent work showcasing <span className="gradient-text-secondary font-semibold">innovative frontend solutions</span> and expertise in creating engaging, high-performance web experiences.
                     </motion.p>
                     <div className="w-32 h-1 rounded-full mx-auto" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
                 </motion.div>
@@ -354,8 +356,8 @@ const Projects = () => {
                         <h3 className="text-2xl font-bold gradient-text-secondary mb-4">
                             Interested in More?
                         </h3>
-                        <p className="text-gray-600 mb-8 leading-relaxed">
-                            Explore my complete portfolio on GitHub to see more projects, contributions, and technical experiments.
+                        <p className="text-gray-300 mb-8 leading-relaxed">
+                            Explore my complete portfolio on GitHub to see more projects, contributions, and frontend experiments.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">

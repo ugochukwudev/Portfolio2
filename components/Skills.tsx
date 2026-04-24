@@ -2,28 +2,22 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { FaNodeJs, FaAws, FaDocker, FaGitAlt } from "react-icons/fa";
+import { FaReact, FaJs, FaGitAlt, FaNodeJs, FaAws, FaGoogle, FaDocker, FaDatabase } from "react-icons/fa";
 import {
     SiTypescript,
-    SiJavascript,
-    SiMongodb,
-    SiPostgresql,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiWebpack,
+    SiRedux,
     SiExpress,
     SiNestjs,
-    SiAwslambda,
-    SiAmazoncloudwatch,
-    SiTerraform,
-    SiJenkins,
-    SiKubernetes,
-    SiDynatrace,
-    SiElasticsearch,
-    SiGo,
-    SiJira,
-    SiGrafana,
-    SiPrometheus,
-    SiAmazonrds,
-    SiFirebase,
-    SiPuppeteer
+    SiMongodb,
+    SiPostgresql,
+    SiJest,
+    SiGraphql,
+    SiRailway,
+    SiRedis,
+    SiSocketdotio
 } from "react-icons/si";
 
 // Define skill item type
@@ -59,59 +53,60 @@ const Skills = () => {
     }, []);
 
     // Organize skills by category for better presentation
-    const backendTech: SkillItem[] = [
+    const languages: SkillItem[] = [
+        { icon: FaJs, name: "JavaScript" },
+        { icon: SiTypescript, name: "TypeScript" }
+    ];
+
+    const frontend: SkillItem[] = [
+        { icon: FaReact, name: "React" },
+        { icon: SiNextdotjs, name: "Next.js" },
+        { icon: SiTailwindcss, name: "Tailwind CSS" },
+        { icon: SiRedux, name: "Redux" }
+    ];
+
+    const backend: SkillItem[] = [
         { icon: FaNodeJs, name: "Node.js" },
         { icon: SiExpress, name: "Express.js" },
         { icon: SiNestjs, name: "NestJS" },
-        { icon: SiPuppeteer, name: "Puppeteer" }
+        { icon: SiSocketdotio, name: "Socket.io" }
     ];
 
     const databases: SkillItem[] = [
         { icon: SiMongodb, name: "MongoDB" },
         { icon: SiPostgresql, name: "PostgreSQL" },
-        { icon: SiAmazonrds, name: "Amazon RDS" },
-        { icon: SiFirebase, name: "Firebase" }
+        { icon: SiRedis, name: "Redis" },
+        { icon: FaDatabase, name: "SQL" }
     ];
 
-    const cloudInfra: SkillItem[] = [
-        { icon: FaAws, name: "AWS" },
-        { icon: SiAwslambda, name: "Lambda" },
-        { icon: SiAmazoncloudwatch, name: "CloudWatch" },
-        { icon: SiTerraform, name: "Terraform" },
-        { icon: SiKubernetes, name: "Kubernetes" }
+    const apiTools: SkillItem[] = [
+        { icon: SiGraphql, name: "GraphQL" },
+        { icon: FaJs, name: "REST APIs" }
     ];
 
-    const devOpsTools: SkillItem[] = [
-        { icon: FaDocker, name: "Docker" },
-        { icon: SiJenkins, name: "Jenkins" },
+    const devTools: SkillItem[] = [
         { icon: FaGitAlt, name: "Git" },
-        { icon: SiJira, name: "Jira" }
+        { icon: SiWebpack, name: "Webpack" },
+        { icon: SiJest, name: "Jest" },
+        { icon: FaDocker, name: "Docker" }
     ];
 
-    const monitoringTools: SkillItem[] = [
-        { icon: SiDynatrace, name: "Dynatrace" },
-        { icon: SiElasticsearch, name: "ELK Stack" },
-        { icon: SiGrafana, name: "Grafana" },
-        { icon: SiPrometheus, name: "Prometheus" }
+    const cloud: SkillItem[] = [
+        { icon: FaAws, name: "AWS" },
+        { icon: FaGoogle, name: "Google Cloud" },
+        { icon: SiRailway, name: "Railway" }
     ];
-
-    const languages: SkillItem[] = [
-        { icon: SiJavascript, name: "JavaScript" },
-        { icon: SiTypescript, name: "TypeScript" },
-        { icon: SiGo, name: "Golang" }
-    ];
-
-
 
     // Helper function to render skill section with professional styling
     const renderSkillSection = (title: string, skills: SkillItem[], sectionIndex: number) => {
         const gradients = [
-            'linear-gradient(135deg, #4a38c2, #8f38c2)',
-            'linear-gradient(135deg, #8f38c2, #c238b0)',
-            'linear-gradient(135deg, #c238b0, #b0c238)',
-            'linear-gradient(135deg, #b0c238, #38c24a)',
-            'linear-gradient(135deg, #38c24a, #4a38c2)',
-            'linear-gradient(135deg, #4a38c2, #c238b0)'
+            'from-blue-600 to-indigo-600',
+            'from-indigo-600 to-blue-700',
+            'from-blue-700 to-slate-600',
+            'from-slate-600 to-gray-600',
+            'from-gray-600 to-blue-600',
+            'from-blue-600 to-indigo-600',
+            'from-indigo-600 to-blue-700'
         ];
 
         return (
@@ -129,8 +124,7 @@ const Skills = () => {
                 >
                     <h3 className="text-xl sm:text-2xl font-bold mb-2 gradient-text-secondary">{title}</h3>
                     <div
-                        className="w-16 h-1 rounded-full"
-                        style={{ background: gradients[sectionIndex % gradients.length] }}
+                        className={`w-16 h-1 rounded-full bg-gradient-to-r ${gradients[sectionIndex % gradients.length]}`}
                     ></div>
                 </motion.div>
 
@@ -151,10 +145,9 @@ const Skills = () => {
                                 }}
                             >
                                 <motion.div
-                                    className="p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl transition-all duration-300"
-                                    style={{ background: `${gradients[sectionIndex % gradients.length]}15` }}
+                                    className={`p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl transition-all duration-300 bg-gradient-to-br ${gradients[sectionIndex % gradients.length]} bg-opacity-15`}
                                     whileHover={{
-                                        background: gradients[sectionIndex % gradients.length],
+                                        background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
                                         transition: { duration: 0.3 }
                                     }}
                                 >
@@ -180,11 +173,11 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" className="relative py-24 px-4 lg:px-0 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}>
+        <section id="skills" className="relative py-24 px-4 lg:px-0 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
             {/* Gradient Background Elements */}
-            <div className="absolute top-20 right-10 w-96 h-96 rounded-full opacity-10" style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}></div>
-            <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full opacity-10" style={{ background: 'linear-gradient(135deg, #c238b0, #b0c238)' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full opacity-5" style={{ background: 'linear-gradient(135deg, #38c24a, #4a38c2)' }}></div>
+            <div className="absolute top-20 right-10 w-96 h-96 rounded-full opacity-10 bg-gradient-to-br from-blue-600 to-indigo-600"></div>
+            <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full opacity-10 bg-gradient-to-br from-indigo-600 to-blue-700"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full opacity-5 bg-gradient-to-br from-slate-600 to-gray-600"></div>
 
             <div className="container-custom relative z-10">
                 <motion.div
@@ -194,7 +187,7 @@ const Skills = () => {
                     className="text-center mb-20"
                 >
                     <motion.h2
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text-primary"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -209,10 +202,10 @@ const Skills = () => {
                         className="max-w-3xl mx-auto"
                     >
                         <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 px-4 sm:px-0">
-                            I specialize in <span className="gradient-text-secondary font-semibold">backend engineering</span> and <span className="gradient-text-secondary font-semibold">cloud infrastructure</span> with a focus on building scalable, high-performance systems.
+                            I'm a <span className="gradient-text-secondary font-semibold">full-stack web developer</span> with expertise across the entire development stack, from frontend user interfaces to backend systems and cloud deployment.
                         </p>
                         <p className="text-sm sm:text-base text-gray-400 px-4 sm:px-0">
-                            Here are the technologies and tools I work with to deliver robust solutions.
+                            Here are the technologies I use to build complete, scalable web applications.
                         </p>
                     </motion.div>
 
@@ -221,18 +214,18 @@ const Skills = () => {
                         initial={{ scaleX: 0 }}
                         animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
-                        className="w-24 h-1 mx-auto mt-8 rounded-full"
-                        style={{ background: 'linear-gradient(135deg, #4a38c2, #8f38c2)' }}
+                        className="w-24 h-1 mx-auto mt-8 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"
                     ></motion.div>
                 </motion.div>
 
                 <div ref={ref} className="space-y-4">
-                    {renderSkillSection("Backend Technologies", backendTech, 0)}
-                    {renderSkillSection("Database Systems", databases, 1)}
-                    {renderSkillSection("Cloud & Infrastructure", cloudInfra, 2)}
-                    {renderSkillSection("DevOps Tools", devOpsTools, 3)}
-                    {renderSkillSection("Monitoring & Observability", monitoringTools, 4)}
-                    {renderSkillSection("Programming Languages", languages, 5)}
+                    {renderSkillSection("Programming Languages", languages, 0)}
+                    {renderSkillSection("Frontend Development", frontend, 1)}
+                    {renderSkillSection("Backend Development", backend, 2)}
+                    {renderSkillSection("Databases", databases, 3)}
+                    {renderSkillSection("APIs & Integration", apiTools, 4)}
+                    {renderSkillSection("Development Tools", devTools, 5)}
+                    {renderSkillSection("Cloud & Deployment", cloud, 6)}
                 </div>
             </div>
         </section>
