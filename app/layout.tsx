@@ -10,59 +10,50 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ikegbulam Ugochukwu Paul | Frontend Developer & Fullstack Engineer",
-  description: "Strategic Frontend Developer with 4+ years of experience creating immersive, high-performance web applications. Expert in React, Next.js, and modern frontend technologies with fullstack capabilities.",
+  title: "Ikegbulam Ugochukwu Paul | Fullstack Developer",
+  description: "Fullstack Developer, Technical Writer, and Community Leader — building scalable web applications front to back with React, Next.js, Node.js, and TypeScript.",
   keywords: [
-    "frontend developer",
-    "fullstack engineer",
+    "fullstack developer",
+    "software engineer",
     "web developer",
     "React developer",
     "Next.js",
+    "Node.js",
     "TypeScript",
     "JavaScript",
-    "UI/UX development",
-    "responsive design",
+    "Paul Ambrose",
     "Ikegbulam Ugochukwu Paul"
   ],
-  authors: [{ name: "Ikegbulam Ugochukwu Paul" }],
-  creator: "Ikegbulam Ugochukwu Paul",
-  publisher: "Ikegbulam Ugochukwu Paul",
+  authors: [{ name: "Paul Ambrose" }],
+  creator: "Paul Ambrose",
+  publisher: "Paul Ambrose",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://your-domain.com",
-    siteName: "Ikegbulam Ugochukwu Paul - Frontend Developer",
-    title: "Ikegbulam Ugochukwu Paul | Frontend Developer & Fullstack Engineer",
-    description: "Strategic Frontend Developer with 4+ years of experience creating immersive, high-performance web applications.",
+    siteName: "Paul Ambrose - Fullstack Developer",
+    title: "Paul Ambrose | Fullstack Developer",
+    description: "Fullstack Developer building scalable web applications — frontend and backend.",
     images: [
       {
         url: "/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Ikegbulam Ugochukwu Paul - Frontend Developer",
+        alt: "Paul Ambrose - Fullstack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ikegbulam Ugochukwu Paul | Frontend Developer & Fullstack Engineer",
-    description: "Strategic Frontend Developer with 4+ years of experience creating immersive, high-performance web applications.",
+    title: "Paul Ambrose | Fullstack Developer",
+    description: "Fullstack Developer building scalable web applications — frontend and backend.",
     images: ["/profile.jpeg"],
-    creator: "@your-twitter-handle",
   },
   icons: {
     icon: "/profile.jpeg",
     shortcut: "/profile.jpeg",
     apple: "/profile.jpeg",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/profile.jpeg",
-    },
-  },
-
-  verification: {
-    google: "your-google-verification-code", // Add this when you have it
   },
   alternates: {
     canonical: "https://your-domain.com",
@@ -84,11 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="canonical" href="https://your-domain.com" />
-        <meta name="theme-color" content="#5b78e5" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={`${poppins.variable} font-sans`}>{children}</body>
     </html>

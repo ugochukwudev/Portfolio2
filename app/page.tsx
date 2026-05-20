@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,13 +9,12 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="overflow-hidden">
+      <main>
         <Hero />
         <About />
         <Projects />
         <Skills />
         <Contact />
-        <Footer />
       </main>
     </>
   );
