@@ -1,200 +1,111 @@
-"use client";
+import Image from 'next/image';
 
-import { motion } from "framer-motion";
-import { RiArrowRightUpLine, RiDownloadLine } from "react-icons/ri";
-import Image from "next/image";
-import { FaReact, FaJs, FaCode, FaPalette } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript } from "react-icons/si";
+const socials = [
+  {
+    label: 'GitHub',
+    href: 'https://github.com/ikegbulam',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/ikegbulam-paul',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Twitter / X',
+    href: 'https://twitter.com/ikegbulampaul',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+];
 
-const Hero = () => {
-    return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-20">
-            {/* Professional background elements */}
-            <div className="absolute inset-0">
-                <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-gradient-to-br from-blue-600 to-indigo-600"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-0 blur-3xl bg-gradient-to-br from-indigo-600 to-blue-700"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-6 blur-3xl bg-gradient-to-br from-slate-600 to-gray-600"></div>
+export default function Hero() {
+  return (
+    <section id="home" className="section-padding">
+      <div className="container-custom">
+        <div className="flex flex-col-reverse md:flex-row md:items-start gap-12 md:gap-16">
+
+          {/* Left — text */}
+          <div className="flex-1">
+            {/* Role labels */}
+            <p className="text-xs font-semibold tracking-widest uppercase mb-5" style={{ color: 'var(--accent)' }}>
+              Software Engineer &bull; Technical Writer &bull; Community Leader
+            </p>
+
+            {/* Greeting */}
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--text)] leading-tight mb-4">
+              Hello, I&apos;m{' '}
+              <span className="accent">Ugochukwu</span>!
+            </h2>
+
+            {/* Tagline */}
+            <p className="text-[var(--text-muted)] mb-3 leading-relaxed">
+              Fullstack developer building scalable web products, front to back.
+            </p>
+
+            {/* Description */}
+            <p className="text-[var(--text-muted)] mb-8 leading-relaxed">
+              I&apos;ve spent 4+ years shipping software across the entire stack — crafting
+              clean interfaces with React and Next.js, and building reliable APIs with Node.js,
+              Express, and PostgreSQL. I also write technical content and help build engineering
+              communities.
+            </p>
+
+            {/* Connect with me */}
+            <div>
+              <p className="text-sm font-semibold text-[var(--text)] mb-3">Connect with me</p>
+              <div className="flex gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={s.label}
+                    className="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--text)] text-[var(--bg)] hover:bg-[var(--accent)] transition-colors"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
             </div>
+          </div>
 
-            {/* Floating tech icons with professional styling */}
-            <motion.div
-                className="absolute left-[15%] top-[25%] hidden lg:block text-blue-500/30"
-                animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          {/* Right — photo */}
+          <div className="flex-shrink-0 flex justify-center md:justify-end">
+            <div
+              className="overflow-hidden rounded-2xl"
+              style={{
+                width: 260,
+                height: 320,
+                background: 'var(--border)',
+                boxShadow: '0 0 0 1.5px var(--border), 0 0 0 3.5px var(--accent), 0 0 0 5px var(--border)',
+              }}
             >
-                <FaReact size={40} />
-            </motion.div>
-
-            <motion.div
-                className="absolute right-[15%] top-[30%] hidden lg:block text-indigo-500/30"
-                animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            >
-                <SiNextdotjs size={36} />
-            </motion.div>
-
-            <motion.div
-                className="absolute right-[20%] bottom-[25%] hidden lg:block text-blue-600/30"
-                animate={{ y: [0, -10, 0], rotate: [0, 12, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-                <SiTypescript size={38} />
-            </motion.div>
-
-            <motion.div
-                className="absolute left-[20%] bottom-[30%] hidden lg:block text-slate-500/30"
-                animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
-                transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-                <FaPalette size={42} />
-            </motion.div>
-
-            {/* Main content container */}
-            <div className="container-custom relative z-10 text-center">
-                <div className="w-full max-w-4xl mx-auto flex flex-col items-center relative z-10 px-4">
-                    {/* Professional Hero Image */}
-                    <motion.div
-                        className="mb-16"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        <div className="relative">
-                            {/* Main image container with professional styling */}
-                            <div className="relative h-[200px] w-[200px] sm:h-[240px] sm:w-[240px] md:h-[280px] md:w-[280px] lg:h-[320px] lg:w-[320px] mx-auto">
-                                {/* Gradient ring around image */}
-                                <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-br from-blue-600 to-indigo-600">
-                                    <div className="w-full h-full rounded-full bg-white p-2">
-                                        <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
-                                            <Image
-                                                src="/profile.png"
-                                                alt="Ikegbulam Ugochukwu Paul - Frontend Developer"
-                                                fill
-                                                style={{ objectFit: "contain" }}
-                                                className="transition-transform duration-500 hover:scale-110"
-                                                priority
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Professional floating elements */}
-                                <motion.div
-                                    className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center bg-gradient-to-br from-blue-600 to-indigo-600"
-                                    animate={{ y: [0, -8, 0] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                >
-                                    <FaReact className="text-white" size={24} />
-                                </motion.div>
-
-                                <motion.div
-                                    className="absolute -top-6 -left-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center bg-gradient-to-br from-indigo-600 to-blue-700"
-                                    animate={{ y: [0, 8, 0] }}
-                                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                >
-                                    <FaCode className="text-white" size={24} />
-                                </motion.div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Professional Text Content */}
-                    <motion.article
-                        className="text-center max-w-5xl mx-auto"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                    >
-                        {/* Professional greeting */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
-                            className="mb-6"
-                        >
-                            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-                                👋 Hello, I'm Ikegbulam Ugochukwu Paul
-                            </span>
-                        </motion.div>
-
-                        <motion.h1
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 sm:mb-8 text-balance"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.7, duration: 1 }}
-                        >
-                            Web <span className="gradient-text">Developer</span><br />
-                            <span className="gradient-text-secondary">& Software Engineer</span>
-                        </motion.h1>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.9, duration: 0.8 }}
-                            className="max-w-3xl mx-auto mb-8 sm:mb-12 px-4 sm:px-0"
-                        >
-                            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-                                Crafting <strong className="text-white">scalable web applications</strong> with modern technologies across the full development stack.
-                            </p>
-                            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                                Specializing in React, Node.js, and cloud technologies with 4+ years of experience
-                                building complete solutions from frontend interfaces to backend systems.
-                            </p>
-                        </motion.div>
-
-                        {/* Professional CTA Buttons */}
-                        <motion.div
-                            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full max-w-md sm:max-w-none mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.1, duration: 0.8 }}
-                        >
-                            <motion.a
-                                href="#projects"
-                                className="btn-primary inline-flex items-center justify-center gap-3 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold shadow-lg w-full sm:w-auto"
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <span>View My Work</span>
-                                <RiArrowRightUpLine size={20} />
-                            </motion.a>
-
-                            <motion.a
-                                href="/resume"
-                                className="btn-secondary inline-flex items-center justify-center gap-3 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold w-full sm:w-auto"
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <RiDownloadLine size={20} />
-                                <span>View Resume</span>
-                            </motion.a>
-                        </motion.div>
-
-                        {/* Professional stats or highlights */}
-                        <motion.div
-                            className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto px-4 sm:px-0"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.3, duration: 0.8 }}
-                        >
-                            <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold gradient-text mb-2">4+</div>
-                                <div className="text-gray-300 text-sm sm:text-base">Years Experience</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold gradient-text-secondary mb-2">50+</div>
-                                <div className="text-gray-300 text-sm sm:text-base">Projects Completed</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold gradient-text-accent mb-2">∞</div>
-                                <div className="text-gray-300 text-sm sm:text-base">Ideas Brought to Life</div>
-                            </div>
-                        </motion.div>
-                    </motion.article>
-                </div>
+              <Image
+                src="/profile.png"
+                alt="Ikegbulam Ugochukwu Paul"
+                width={260}
+                height={320}
+                className="object-cover object-top w-full h-full"
+                priority
+              />
             </div>
-        </section>
-    );
-};
+          </div>
 
-export default Hero;
+        </div>
+      </div>
+    </section>
+  );
+}
