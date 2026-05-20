@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 
 const links = [
@@ -12,13 +9,11 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header className="pt-10 pb-8 text-center border-b border-[var(--border)]">
       <div className="container-custom">
         {/* Name */}
-        <a href="#" className="inline-block">
+        <a href="#">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] leading-tight">
             Ikegbulam{' '}
             <span className="accent">U.</span>{' '}
@@ -31,14 +26,14 @@ export default function Navbar() {
           Software Engineer. Technical Writer. Community Leader.
         </p>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex justify-center gap-8">
+        {/* Nav — always visible, scrollable on mobile */}
+        <nav className="flex justify-center gap-6 overflow-x-auto pb-1 scrollbar-hide">
           {links.map((l) =>
             l.isPage ? (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap flex-shrink-0"
               >
                 {l.label}
               </Link>
@@ -46,49 +41,13 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap flex-shrink-0"
               >
                 {l.label}
               </a>
             )
           )}
         </nav>
-
-        {/* Mobile toggle */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? 'Close ✕' : 'Menu ☰'}
-          </button>
-          {menuOpen && (
-            <nav className="flex flex-col items-center gap-4 mt-4">
-              {links.map((l) =>
-                l.isPage ? (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                )
-              )}
-            </nav>
-          )}
-        </div>
       </div>
     </header>
   );
