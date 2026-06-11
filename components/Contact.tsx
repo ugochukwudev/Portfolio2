@@ -1,7 +1,7 @@
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/ikegbulam' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/ikegbulam-paul' },
-  { label: 'Twitter / X', href: 'https://twitter.com/ikegbulampaul' },
+  { label: 'GitHub', href: 'https://github.com/ugochukwudev' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ugochukwu-paul-b62b53258/' },
+  { label: 'Twitter / X', href: 'https://x.com/impulsejs' },
 ];
 
 export default function Contact() {

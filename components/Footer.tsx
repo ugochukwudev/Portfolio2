@@ -17,7 +17,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <FaGithub size={20} />, url: "https://github.com/ugochukwudev" },
     { icon: <FaLinkedinIn size={20} />, url: "https://www.linkedin.com/in/ugochukwu-paul-b62b53258/" },
-    { icon: <FaTwitter size={20} />, url: "https://x.com/" },
+    { icon: <FaTwitter size={20} />, url: "https://x.com/impulsejs" },
     { icon: <FaInstagram size={20} />, url: "https://web.facebook.com/paul.ambrose.9085/" }
   ];
 
