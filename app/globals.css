@@ -49,3 +49,34 @@ body {
 .accent {
   color: var(--accent);
 }
+
+/* --- Ruled lines (About section) --- */
+
+/* the rule period must match --rule so the text sits on the lines */
+.notebook-lines {
+  --rule: 2rem;
+  padding: calc(var(--rule) / 2) 0 var(--rule);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--rule) - 1px),
+    rgba(107, 140, 109, 0.18) calc(var(--rule) - 1px),
+    rgba(107, 140, 109, 0.18) var(--rule)
+  );
+  background-position: 0 calc(var(--rule) / 2);
+}
+
+.notebook-hand {
+  font-size: 1.0625rem;
+  line-height: var(--rule);
+  color: #4a4a46;
+  max-width: 42rem;
+}
+
+.notebook-hand p {
+  margin: 0 0 var(--rule) 0;
+}
+
+.notebook-hand p:last-child {
+  margin-bottom: 0;
+}

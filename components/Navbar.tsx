@@ -21,13 +21,8 @@ export default function Navbar() {
           </h1>
         </a>
 
-        {/* Subtitle */}
-        <p className="text-[var(--text-muted)] mt-2 mb-6 text-sm md:text-base">
-          Software Engineer. Technical Writer. Community Leader.
-        </p>
-
         {/* Nav — always visible, scrollable on mobile */}
-        <nav className="flex justify-center gap-6 overflow-x-auto pb-1 scrollbar-hide">
+        <nav className="flex justify-center gap-6 overflow-x-auto pb-1 mt-6 scrollbar-hide">
           {links.map((l) =>
             l.isPage ? (
               <Link

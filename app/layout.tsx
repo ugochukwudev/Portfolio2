@@ -9,6 +9,9 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// TODO: point this at the real deployed domain (or set NEXT_PUBLIC_SITE_URL).
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://your-domain.com";
+
 export const metadata: Metadata = {
   title: "Ikegbulam Ugochukwu Paul | Fullstack Developer",
   description: "Fullstack Developer, Technical Writer, and Community Leader — building scalable web applications front to back with React, Next.js, Node.js, and TypeScript.",
@@ -21,32 +24,31 @@ export const metadata: Metadata = {
     "Node.js",
     "TypeScript",
     "JavaScript",
-    "Paul Ambrose",
     "Ikegbulam Ugochukwu Paul"
   ],
-  authors: [{ name: "Paul Ambrose" }],
-  creator: "Paul Ambrose",
-  publisher: "Paul Ambrose",
+  authors: [{ name: "Ikegbulam Ugochukwu Paul" }],
+  creator: "Ikegbulam Ugochukwu Paul",
+  publisher: "Ikegbulam Ugochukwu Paul",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
-    siteName: "Paul Ambrose - Fullstack Developer",
-    title: "Paul Ambrose | Fullstack Developer",
+    url: SITE_URL,
+    siteName: "Ikegbulam Ugochukwu Paul - Fullstack Developer",
+    title: "Ikegbulam Ugochukwu Paul | Fullstack Developer",
     description: "Fullstack Developer building scalable web applications — frontend and backend.",
     images: [
       {
         url: "/profile.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Paul Ambrose - Fullstack Developer",
+        width: 980,
+        height: 988,
+        alt: "Ikegbulam Ugochukwu Paul - Fullstack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paul Ambrose | Fullstack Developer",
+    title: "Ikegbulam Ugochukwu Paul | Fullstack Developer",
     description: "Fullstack Developer building scalable web applications — frontend and backend.",
     images: ["/profile.jpeg"],
   },
@@ -56,9 +58,9 @@ export const metadata: Metadata = {
     apple: "/profile.jpeg",
   },
   alternates: {
-    canonical: "https://your-domain.com",
+    canonical: SITE_URL,
   },
-  metadataBase: new URL('https://your-domain.com'),
+  metadataBase: new URL(SITE_URL),
 };
 
 export const viewport = {
@@ -75,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#eae5db" />
       </head>
       <body className={`${poppins.variable} font-sans`}>{children}</body>
     </html>

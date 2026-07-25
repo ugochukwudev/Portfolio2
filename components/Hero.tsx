@@ -20,7 +20,7 @@ const socials = [
     ),
   },
   {
-    label: 'Twitter / X',
+    label: 'Twitter',
     href: 'https://x.com/impulsejs',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
